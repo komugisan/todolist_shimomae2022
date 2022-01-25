@@ -52,6 +52,7 @@ body {
     height: 540px;
     margin: 20px auto;
     overflow: auto;
+    padding-right: 15px;
 }
 
 .todolist::-webkit-scrollbar {
