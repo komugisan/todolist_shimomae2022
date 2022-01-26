@@ -5299,6 +5299,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -5314,9 +5315,10 @@ var app = new Vue({
     deleteTodo: function deleteTodo(e) {
       var deleteId = e.currentTarget.getAttribute("data-delete-id");
       axios.post('/api/del', {
-        id: e
+        id: deleteId
       }).then(function (response) {
         console.log("成功！");
+        location.reload();
       })["catch"](function (error) {
         console.log(error);
       });
@@ -5359,7 +5361,8 @@ Vue.component('todolist-component', (__webpack_require__(/*! ./components/Todoli
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  router: router
 });
 
 /***/ }),

@@ -20,7 +20,9 @@
 
       <ul class="todolist" id="todolist">
         @foreach ($todos as $todo)
-        <li class="todo-{{ $todo->id }}">{{ $todo->todo }} <i class="fas fa-trash-alt todo__ope__icon" data-delete-id="{{ $todo->id }}" @click="deleteTodo"></i></li>
+        <li class="todo-{{ $todo->id }}">{{ $todo->todo }} 
+          <i class="fas fa-trash-alt todo__ope__icon" data-delete-id="{{ $todo->id }}" @click="deleteTodo"></i>
+        </li>
         @endforeach
       </ul>
   </section>

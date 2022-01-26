@@ -31,4 +31,5 @@ Vue.component('todolist-component', require('./components/TodolistComponent.vue'
 
 const app = new Vue({
     el: '#app',
+    router: router,
 });

@@ -5,7 +5,6 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/{msg?}', [TodoController::class, 'index']);
 Route::post('/', [TodoController::class, 'post']);
-
-Route::group(['middleware' => 'api'], function() {
-    Route::post('del',  [TodoController::class,'delete']);
-});
+Route::get('/{any}', function () {
+    return view('index');
+})->where('any', '.*');

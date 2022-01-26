@@ -9,10 +9,5 @@
 <body>
   <h3>TESTだよ</h3>
 
-  <ul>
-    @foreach ($todos as $todo)
-    <li>{{ $todo->todo }}</li>
-    @endforeach
-</ul>
 </body>
 </html>

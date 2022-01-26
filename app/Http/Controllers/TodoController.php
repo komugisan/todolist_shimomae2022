@@ -19,17 +19,12 @@ class TodoController extends Controller
             'todo' => $request->todo, //取得したいデータをinput要素のname属性
         ];
         DB::insert('insert into todolist set todo = :todo', $param);
-        $todos = DB::select('select * from todolist order by id desc');
-        $data = ['todos' => $todos];
-        return view('index',$data);
+        return redirect('/');
     }
     public function delete(Request $request)
     {
-        //$data = DB::table('todolist')->get(['id']);
-        //DB::table('todolist')-> where($deleteId)->delete();
-        print_r("どうかな");
-        $todos = DB::select('select * from todolist order by id desc');
-        $data = ['todos' => $todos];
-        return view('index',$data);
+        file_put_contents('test.log', print_r($request->input(), true));
+        DB::table('todolist')-> where($request->input())->delete();
+        return redirect('/');
     }
 }

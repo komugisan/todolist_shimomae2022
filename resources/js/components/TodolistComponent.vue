@@ -1,4 +1,5 @@
-<template></template>
+<template>
+</template>
 
 <script>
 export default {
@@ -17,10 +18,11 @@ var app = new Vue({
         deleteTodo: function (e) {
             let deleteId = e.currentTarget.getAttribute("data-delete-id");
                     axios.post('/api/del',{
-                        id: e
+                        id: deleteId
                         })
                 .then((response) => {
                     console.log("成功！");
+                    location.reload();
                 })
                 .catch((error) => {
                     console.log(error);
